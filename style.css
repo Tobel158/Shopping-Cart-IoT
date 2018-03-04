@@ -1,0 +1,117 @@
+ .sidebar{
+    background-color: blanchedalmond;
+    width: 25%;
+    height: 100%;
+    margin-left: 10px;
+    display: inline-block;
+    float:left;
+        }
+#all{
+    padding-top: 10px;
+}
+#scanned{
+    font-family: monospace;
+}
+
+.nav li a:focus, .nav li a:hover {
+  background: transparent;
+}
+.tabWrap {
+    float:right;
+    height:100%;
+  
+}
+.tab-content {
+  height: 92%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position:relative;
+  background: #01bcd6;
+}
+.tab-content .tab-pane {
+  position: relative;
+  bottom: 10px;
+ 
+}
+.nav-tabs li.active a, .nav-tabs li.active a:focus, .nav-tabs li.active a:hover {
+  border: none;
+  color: #ffffff;
+  background: none;
+}
+
+.nav-tabs li {
+  width: 33.33%;
+}
+.nav-tabs li a {
+  border-radius: 0;
+  color: #ffffff;
+  border: none;
+  padding: 15px 0;
+  margin-right: 0;
+}
+.tabAnchor {
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.tabInner {
+  padding: 10px;
+  margin: 10px;
+  height: 99%;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.tabToggle {
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.firstPanel, .nav-tabs li a.firstPanel, .nav-tabs li.active a.firstPanel, .nav-tabs li.active a.firstPanel:focus, .nav-tabs li.active a.firstPanel:hover {
+  background: #01bcd6;
+}
+.firstPanel:hover, .nav-tabs li a.firstPanel:hover, .nav-tabs li.active a.firstPanel:hover, .nav-tabs li.active a.firstPanel:focus:hover, .nav-tabs li.active a.firstPanel:hover:hover {
+  background: rgba(1, 188, 214, 0.85);
+}
+
+.secondPanel, .nav-tabs li a.secondPanel, .nav-tabs li.active a.secondPanel, .nav-tabs li.active a.secondPanel:focus, .nav-tabs li.active a.secondPanel:hover {
+  background: #E73C7E;
+}
+.secondPanel:hover, .nav-tabs li a.secondPanel:hover, .nav-tabs li.active a.secondPanel:hover, .nav-tabs li.active a.secondPanel:focus:hover, .nav-tabs li.active a.secondPanel:hover:hover {
+  background: rgba(	231, 60, 126, 0.75);
+}
+
+.thirdPanel, .nav-tabs li a.thirdPanel, .nav-tabs li.active a.thirdPanel, .nav-tabs li.active a.thirdPanel:focus, .nav-tabs li.active a.thirdPanel:hover {
+     background: #ff3030;
+}
+.thirdPanel:hover, .nav-tabs li a.thirdPanel:hover, .nav-tabs li.active a.thirdPanel:hover, .nav-tabs li.active a.thirdPanel:focus:hover, .nav-tabs li.active a.thirdPanel:hover:hover {
+  background: yellow;
+  color: red;
+    font-display: block;
+}
+    body {
+    	width: 100%;
+    	height: 90vh;
+    	color: black;
+    	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    	background-size: 400% 400%;
+    	-webkit-animation: Gradient 15s ease infinite;
+    	-moz-animation: Gradient 15s ease infinite;
+    	animation: Gradient 15s ease infinite;
+    }
+
+    @-webkit-keyframes Gradient {
+    	0% {background-position: 0% 50%}
+    	50% {background-position: 100% 50%}
+    	100% {background-position: 0% 50%}
+    }
+    @-moz-keyframes Gradient {
+    	0% {background-position: 0% 50%}
+    	50% {background-position: 100% 50%}
+    	100% {background-position: 0% 50%}
+    }
+    @keyframes Gradient {
+    	0% {background-position: 0% 50%}
+    	50% {background-position: 100% 50%}
+    	100% {background-position: 0% 50%}
+    }

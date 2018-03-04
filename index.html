@@ -1,0 +1,90 @@
+<html>
+    <head>
+        
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+<script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <style>
+
+        </style>
+    </head>
+    <body>
+       <div class="container-fluid" id ="all">
+            <div class="row">
+                <div class="sidebar col-sm-4 col-md-4 col-lg-4">
+            <h4>Items Scanned</h4>
+            <ul id = "scanned">
+                <li>Doritos --- $</li>
+                <li>Mtn Dew --- $</li>
+            </ul>
+             
+                </div>
+ 
+            
+
+   
+	<div id = "tab-wrap" class="col-sm-8 col-md-8 col-lg-8">
+  
+    <ul class="nav nav-tabs" role = "tablist" id ="myTab" >
+    <li class="active tabToggle"><a href="#firstPanel" role = "presentation" class = "tabAnchor firstPanel text-center" data-color="green" data-toggle = "tab" onclick="changeGreen()">Recipies</a></li>
+    <li role = "presentation" ><a class = "tabAnchor secondPanel text-center" href="#secondPanel" data-color="#9d21b2" aria-controls="secondPanel" role="tab" data-toggle="tab" onclick="changeRed()">Related</a></li>
+    <li role="presentation"><a href="#thirdPanel" class = "tabAnchor thirdPanel text-center" data-color = "#099323" aria-controls="thirdPanel" role="tab" data-toggle = "tab" onclick="changeBlue()">Sale!</a></li> 
+  </ul>
+
+
+
+    <div id = "tab-content"class="tab-content">
+        <div role = "tabpanel" class="tab-pane active" id = "firstPanel">
+           <div class="tabInner">
+               <h2></h2>
+           </div> <!--tabinner-->
+            
+        </div><!--tabpanel-->
+     <div role = "tabpanel" class="tab-pane" id= "secondPanel">
+        <div class="tabInner">
+               <h2></h2>
+           </div> <!--tabinner-->
+        </div><!--tabpanel-->
+     
+    <div role = "tabpanel" class="tab-pane" id = "thirdPanel">
+        <div class="tabInner">
+               <h2></h2>
+        </div> <!--tabinner-->
+            
+    </div><!--tabpanel-->
+       
+       </div>      
+</div><!--tabWrap-->
+           </div>
+        </div>      
+    </body>
+    <script>
+             var socket = io.connect( 'http://127.0.0.1:5001' )
+     // broadcast a message
+   /*  socket.on( 'connect', function() {
+       socket.emit( 'my event', {
+         data: 'User Connected'
+       } )
+     } )*/
+
+     // capture message
+             var scanned = document.getElementById("scanned");
+             var recipie = document.getElementById("firstPanel");
+             var related = document.getElementById("secondPanel");
+             var sales = document.getElementById("thirdPanel");
+     socket.on( 'my response', function( msg ) {
+       strData = JSON.parse(msg);
+       console.log( strData );
+       //if( typeof msg.count !== 'undefined' ) {
+         $( 'h1' ).remove();
+         $( 'div.message_holder' ).append( '<div class="msg_bbl"><b style="color: #000">'+strData+'</b></div>' );
+       //}
+     } ); 
+         
+        
+    </script>
+</html>
